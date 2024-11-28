@@ -3,16 +3,16 @@
 You don't have to set this if you deploy using heroku because you can simply set them in environment variables, also don't forget to sleep */
 
 
-const session = process.env.SESSION || '';
+const session = process.env.SESSION || 'eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibUFRRkxMZFpIUGtTdkFXK0d4ZFp2UlNyUGtDRzBieVZMZEFEVkpyaUVIcz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoibG8zRHNpSkx1WGxFZTFqa1lkbXVsRDlubndudHdwTFZqMzFmTThmOS8xbz0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJ5THRYc1NSVkZTanNVcDVpNDJ2cDM2Smw5elNwNjJFVUpMYjF1empHNEZnPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJHN2ZLQzFPaXlBaHZxRUc2S2JrOVRPcFBNa1BrTng1MjYzb29nTkZ1cmhFPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Im9HdGZISGhBTGwzWG5FZDBUQjB4cGJTTlRhblh0VXY2ODdBZ2xpb2VFV1E9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkVYbFdQaVlVOGtpV28xcm9BQVV0c2JlTmVEbDY3OGRLSnc2UU5EWXZNWFU9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiWUE5YnJ3K1czQlVvcXlEOWp3WjkxRWxNbUI5RTNuTy9jWUR3YnJvdUcycz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiR0hmazZVNXFRM3J4UW1GQWpjMVhVbU9wQytnMmh6SGY0N2twa0Q3VitERT0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Im5ISW1oL1l6dFhGR2pOajFDd3FKbzRrbUJjQ25hMGx4a1hQOHlpN0tBaHQzd2pHeS9LMzhtUDN2eW95dzQxdXB6a3dqK1B4NmphV0xJZ0dhQUx4UWl3PT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MzgsImFkdlNlY3JldEtleSI6ImNvSXZ1VFQxWEE3TGNGakxKYjFEVi9sb2NaMVhjRFFRR1ZvSVB0OWpnUEU9IiwicHJvY2Vzc2VkSGlzdG9yeU1lc3NhZ2VzIjpbeyJrZXkiOnsicmVtb3RlSmlkIjoiMjU2NzA3NTIxODYzQHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjp0cnVlLCJpZCI6IkMxMjg5NDFCMzc0QkM5QTRFMkM0QTQ4OEFCNkJGQTlCIn0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3MzI3ODg2ODR9XSwibmV4dFByZUtleUlkIjozMSwiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjMxLCJhY2NvdW50U3luY0NvdW50ZXIiOjAsImFjY291bnRTZXR0aW5ncyI6eyJ1bmFyY2hpdmVDaGF0cyI6ZmFsc2V9LCJkZXZpY2VJZCI6Il9mSHBuUHVKUW1lcDVkMWxFRjRsVWciLCJwaG9uZUlkIjoiNDJkNTlmY2YtNzhhYi00N2VjLWIwMzEtNzkzNzYxZTNhMGVlIiwiaWRlbnRpdHlJZCI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Ii8wMzhKVHhBOXRmMk9MRTR2YXZzdkJTakU1Yz0ifSwicmVnaXN0ZXJlZCI6dHJ1ZSwiYmFja3VwVG9rZW4iOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJoVDFYNWlUUWpOcW1WbGZhanRCVTExclM3TTA9In0sInJlZ2lzdHJhdGlvbiI6e30sInBhaXJpbmdDb2RlIjoiVldWMTNRODIiLCJtZSI6eyJpZCI6IjI1NjcwNzUyMTg2Mzo3N0BzLndoYXRzYXBwLm5ldCIsIm5hbWUiOiJNT1JJQ0UgREVTSUdOWiJ9LCJhY2NvdW50Ijp7ImRldGFpbHMiOiJDT1N6MXJNRkVMdURvYm9HR0FFZ0FDZ0EiLCJhY2NvdW50U2lnbmF0dXJlS2V5IjoiNzVNZ1Uzd0tobUxSOWZVbjJpbEd5Z2krSzdyc0RxVGtGZFRaSjBvdktHVT0iLCJhY2NvdW50U2lnbmF0dXJlIjoiMmNQdkdLaVlMMFl5WXVKNVdZeS95MlV0ZENYTWNKb2dLTTF1RmhkdU1BOTlIYXlyRFlBRG5iSDgxdHQrNGQxOVVXbngwbmViaVBkYzhhUGxoUlFYQVE9PSIsImRldmljZVNpZ25hdHVyZSI6IjQ0bUR5aW5QbzFqT09GWlUwaGtoQzZZajdPWjBWNnUybjc1bmJxRC9IVVh5VHZqSzRhTUpNR2lpNHMvMkNSZ3ZJZWkrQ0NtUVNyNjZTeTRMMk03emdBPT0ifSwic2lnbmFsSWRlbnRpdGllcyI6W3siaWRlbnRpZmllciI6eyJuYW1lIjoiMjU2NzA3NTIxODYzOjc3QHMud2hhdHNhcHAubmV0IiwiZGV2aWNlSWQiOjB9LCJpZGVudGlmaWVyS2V5Ijp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQmUrVElGTjhDb1ppMGZYMUo5b3BSc29Jdml1NjdBNms1QlhVMlNkS0x5aGwifX1dLCJwbGF0Zm9ybSI6InNtYmEiLCJsYXN0QWNjb3VudFN5bmNUaW1lc3RhbXAiOjE3MzI3ODg2ODAsIm15QXBwU3RhdGVLZXlJZCI6IkFBQUFBTnBLIn0=';
 
-const prefix = process.env.PREFIX || '.';
-const mycode = process.env.CODE || "254";
-const author = process.env.STICKER_AUTHOR || 'Keith';
-const packname = process.env.PACKNAME || 'keith';
-const dev = process.env.DEV || '254748387615';
+const prefix = process.env.PREFIX || ',';
+const mycode = process.env.CODE || "256";
+const author = process.env.STICKER_AUTHOR || 'Morice';
+const packname = process.env.PACKNAME || 'moriceug';
+const dev = process.env.DEV || '256707521863';
 const DevDreaded = dev.split(",");
 const botname = process.env.BOTNAME || 'KEITH-MD';
-const mode = process.env.MODE || 'public';
+const mode = process.env.MODE || 'private';
 const gcpresence = process.env.GC_PRESENCE || 'false';
 const antionce = process.env.ANTIVIEWONCE || 'true';
 const sessionName = "session";
@@ -22,7 +22,7 @@ const antitag = process.env.ANTITAG || 'true';
 const antidelete = process.env.ANTIDELETE || 'true';
 const autoview = process.env.AUTOVIEW_STATUS || 'true';
 const autolike = process.env.AUTOLIKE_STATUS || 'true';
-const autoread = process.env.AUTOREAD || 'true';
+const autoread = process.env.AUTOREAD || 'false';
 const autobio = process.env.AUTOBIO || 'false';
 
 module.exports = {
